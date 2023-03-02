@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PieShop.Models;
+using FoodShop.Models;
 
-namespace PieShop.Migrations
+namespace FoodShop.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20230226234707_SeedDataAdded")]
@@ -20,7 +20,7 @@ namespace PieShop.Migrations
                 .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("PieShop.Models.Category", b =>
+            modelBuilder.Entity("FoodShop.Models.Category", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -55,7 +55,7 @@ namespace PieShop.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PieShop.Models.Pie", b =>
+            modelBuilder.Entity("FoodShop.Models.Pie", b =>
                 {
                     b.Property<int>("PieId")
                         .ValueGeneratedOnAdd()
@@ -255,9 +255,9 @@ namespace PieShop.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PieShop.Models.Pie", b =>
+            modelBuilder.Entity("FoodShop.Models.Pie", b =>
                 {
-                    b.HasOne("PieShop.Models.Category", "Category")
+                    b.HasOne("FoodShop.Models.Category", "Category")
                         .WithMany("Pies")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -266,7 +266,7 @@ namespace PieShop.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("PieShop.Models.Category", b =>
+            modelBuilder.Entity("FoodShop.Models.Category", b =>
                 {
                     b.Navigation("Pies");
                 });

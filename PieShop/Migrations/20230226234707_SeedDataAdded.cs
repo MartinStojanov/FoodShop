@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PieShop.Migrations
+namespace FoodShop.Migrations
 {
     public partial class SeedDataAdded : Migration
     {
